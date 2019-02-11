@@ -24,7 +24,7 @@ function getCalendarWeek(date) {
   }
 
   if (targetDate.getMonth() === 11) {
-    if (targetDate.getDate() > 29 && lastDay.getDay() < 3) {
+    if (targetDate.getDate() > 29 && (lastDay.getDay() < 3 && lastDay.getDay() > 0)) {
       weeksSince = 1
     } else if (targetDate.getDate() > 27 && lastDay.getDay() === 4) {
       weeksSince = 53
@@ -40,12 +40,13 @@ function getCalendarWeek(date) {
   return weeksSince;
 }
 
-getCalendarWeek('2017-01-02'); //1
-getCalendarWeek("2016-12-26"); //52
+getCalendarWeek('1995-12-31') //52
+// getCalendarWeek('2017-01-02'); //1
+// getCalendarWeek("2016-12-26"); //52
 getCalendarWeek("2016-12-25"); //51
-getCalendarWeek("2017-01-01"); //52
-getCalendarWeek("2018-12-24"); //52
-getCalendarWeek("2018-12-31"); //1
-getCalendarWeek("2019-01-01"); //1
-getCalendarWeek("2016-02-29"); //9
-getCalendarWeek("2015-12-29"); //53
+// getCalendarWeek("2017-01-01"); //52
+// getCalendarWeek("2018-12-24"); //52
+// getCalendarWeek("2018-12-31"); //1
+// getCalendarWeek("2019-01-01"); //1
+// getCalendarWeek("2016-02-29"); //9
+// getCalendarWeek("2015-12-29"); //53
