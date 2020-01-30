@@ -1,0 +1,1 @@
+SELECT People.id, People.name, count(Toys.people_id) as toy_count from People INNER JOIN Toys ON People.id=Toys.people_id GROUP BY People.name, People.id;
