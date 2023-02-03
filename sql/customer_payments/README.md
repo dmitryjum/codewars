@@ -1,0 +1,2 @@
+Return customer id, email, total count of payments as payments_count and total amount spent as total_amount
+limit it to 10 rows and render in descending order. There are 2 tables: Customer and Payments
