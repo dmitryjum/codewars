@@ -62,7 +62,17 @@ type Task2 = [
  city = "Element City" (optional)
 */
 
-type Elemental = void;
+type Elemental = {
+  kind: "fire";
+  name: "Ember";
+  city?: "Element City";
+  neighborhood: "Firetown";
+} | {
+  kind: "water";
+  name: "Wade";
+  city?: "Element City";
+  neighborhood?: never;
+}
 
 type Task4 = [
   Expect<Equal<Elemental, { kind: "fire"; neighborhood: "Firetown"; name: "Ember" }>>,
@@ -82,7 +92,7 @@ name = "Ember" or "Wade"
 city = "Element City" (required)
 */
 
-type Residents = void;
+type Residents = Required<Pick<Elemental, "name" | "city">>;
 
 type Task5 = [
   Expect<Equal<Residents, { name: "Ember"; city: "Element City" }>>,
